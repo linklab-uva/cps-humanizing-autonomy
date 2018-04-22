@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fullpage}
+\usepackage{url}
+%\usepackage{epsfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,automata}
+
+\usepackage{graphicx}
+%\usepackage{subfig}
+\usepackage{subfigure}
+\usepackage{latexsym}	
+\usepackage{xspace}
+\usepackage{alltt}
+
+\setlength{\textheight}{9.4in}
+\setlength{\topmargin}{-0.2 in}
+\setlength{\oddsidemargin}{-.1875in}  % Centers text.
+\setlength{\evensidemargin}{-.1875in}
+\setlength{\textwidth}{7in}
+%\setlength{\parindent}{0.25 in}
+%\setlength{\parskip}{2 mm}
+\setcounter{tocdepth}{2}
+\usepackage{wrapfig}
+
+% Theorem-like definitions
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+
+\usepackage{todonotes}
+\newcommand{\nicola}{\todo[inline, color=green!40]}
+\newcommand{\arsalan}{\todo[inline, color=blue!40]}
+\newcommand{\lu}{\todo[inline, color=yellow!40]}
+\newcommand{\madhur}{\todo[inline, color=pink!40]}
+
+% Custom definitions
+%\def\proofsketch{\noindent\hspace*{2em}{\itshape Proof Sketch: }}
+%\def\endproofsketch{\hspace*{\fill}~\QED\par\endtrivlist\unskip}
+
+\newcounter{remark}
+\newenvironment{remark}{%
+\par\noindent\refstepcounter{remark}\textbf{Remark~\theremark:}}%
+{\par\endtrivlist\unskip}
+
+\newcounter{problem}
+\newenvironment{problem}{%
+\par\vspace{3pt}\noindent\refstepcounter{problem}\textbf{Problem~\theproblem:}\itshape}%
+{\par\endtrivlist\vspace{3pt}}
+
+\bibliographystyle{unsrt}
+
+%\usepackage{truonglatexdefs}
+\newcommand\spo{SpO$_2$\xspace}
+\newcommand{\comment}[1]{}
+\newcommand{\putmargin}[1] {\marginpar{\scriptsize #1}}
+\newcommand{\RM}[1]{$\spadesuit$\footnote{RM: #1}}
+\newcommand{\tableref}[1]{Table~\ref{tab:#1}}
+\newcommand{\figref}[1]{Fig.~\ref{fig:#1}}
+
+\usepackage{geometry}
+\usepackage{wrapfig}
+\usepackage[inline]{enumitem}
+\usepackage{caption}
+\captionsetup{font=footnotesize}
+
+
+\title{CPS Medium: Humanizing Autonomous Vehicles}
+%\author{Madhur Behl}
+%\date{}
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\newpage
+
+\renewcommand{\thepage}{A-\arabic{page}}
+\setcounter{page}{1}
+\centerline{\Large\bf CPS: Medium: Humanizing Autonomy}
+\addcontentsline{toc}{part}{A. Project Summary}
+\input{summary}
+
+\newpage
+\tableofcontents
+\addcontentsline{toc}{part}{B. Table of Contents} 
+
+\newpage
+
+\renewcommand{\thepage}{C-\arabic{page}}
+\setcounter{page}{1}
+\centerline{\Large\bf CPS: Medium: Humanizing Autonomy}
+\addcontentsline{toc}{part}{C. Project Description} 
+
+%\input{description}
+
+\input{introduction}
+
+\input{research}
+
+\input{experiment}
+
+\input{plan}
+
+\input{broader}
+
+\input{team}
+
+
+\pagebreak
+\bibliographystyle{unsrt}
+\bibliography{cps}
+
+\end{document}
