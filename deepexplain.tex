@@ -1,0 +1,26 @@
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{figures/deep_exp.pdf}
+    \caption{Deep-Explanation generation: Each dimension of the scene decomposition is used as an input to caption generation. Representation matching, and seq2seq are then used to generate a likely explanation for the predominant action stream.  }
+    \label{fig:deep_exp}
+\end{figure}
+
+Automatic image description generation is a challenging problem that has recently received a large amount of interest from the computer vision and natural language processing communities ~\cite{johnson2016densecap, xu2015show, wang2016image, karpathy2015deep,Vinyals2015ShowAT}
+Not only must caption generation models be able to solve the computer vision challenges of determining what objects are in an image, but they must also be powerful enough to capture and express their relationships in natural language. 
+For this reason, caption generation has long been seen as a difficult problem.
+The task of automatic image description involves taking an image, analyzing its visual content, and generating a textual description (typically a sentence) that verbalizes the most salient aspects of the image. 
+This requires the joint use of both Computer Vision and Natural Language Processing techniques.
+Yet despite the difficult nature of this task, there has been a recent surge of research interest in attacking the image caption generation problem. In particular, deep neural networks have been shown to form new grammatically correct sentences as opposed to the template based models and their limited generalization capability to a novel image.
+To capture the correlation between two modalities i.e. visual and natural language we need to map both these to some same space so at learn the relation between them or say we need to learn the multimodal joint model.
+Models that uses different deep neural networks like convolutional neural network (CNN), long short term memory(LSTM) networks, recurrent neural network(RNN) to implicitly learn the common embedding. These by far gives the best result on all common datasets of caption generation
+Aided by advances in training deep neural networks and the availability of large classification datasets, recent work has significantly improved the quality of caption generation using a combination of convolutional neural networks (convnets) to obtain vector representation of images and recurrent neural networks to decode those representations into natural language sentences.
+
+In the proposed research we extend attention-based image caption generators to work with multidimensional data-sets.
+\begin{enumerate}
+    \item Instead of generating captions from RGB images alone, we will also generate captions from LIDAR data, depth sensor images, and segmented images. 
+    \item The captions themselves, will be enhanced with information about the control decision (steering, acceleration, and braking) made.
+    \item We will gather and release a multidimensional caption data-set specifically for autonomous vehicles. 
+\end{enumerate}
+
+

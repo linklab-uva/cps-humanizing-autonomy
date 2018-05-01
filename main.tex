@@ -67,6 +67,11 @@
 \captionsetup{font=footnotesize}
 
 
+\usepackage{newunicodechar}
+\newunicodechar{ﬁ}{fi}
+\newunicodechar{ﬀ}{ff}
+\newunicodechar{ﬂ}{fl}
+
 \title{CPS Medium: Humanizing Autonomous Vehicles}
 %\author{Madhur Behl}
 %\date{}
@@ -86,6 +91,8 @@
 \input{summary}
 
 \newpage
+\renewcommand{\thepage}{B-\arabic{page}}
+\setcounter{page}{1}
 \tableofcontents
 \addcontentsline{toc}{part}{B. Table of Contents} 
 
@@ -95,24 +102,50 @@
 \setcounter{page}{1}
 \centerline{\Large\bf CPS: Medium: Humanizing Autonomy}
 \addcontentsline{toc}{part}{C. Project Description} 
-
-%\input{description}
-
 \input{introduction}
-
 \input{research}
-
 \input{experiment}
-
 \input{plan}
-
 \input{broader}
-
 \input{team}
 
-
-\pagebreak
+\newpage
+\renewcommand{\thepage}{D-\arabic{page}}
+\setcounter{page}{1}
+\addcontentsline{toc}{part}{D. Bibliography}
 \bibliographystyle{unsrt}
 \bibliography{cps}
+
+\newpage
+\renewcommand{\thepage}{E-\arabic{page}}
+\setcounter{page}{1}
+\centerline{\Large\bf E. Data Management Plan}
+\addcontentsline{toc}{part}{E. Data Management Plan}
+\input{data}
+
+\newpage
+\renewcommand{\thepage}{F-\arabic{page}}
+\setcounter{page}{1}
+\centerline{\Large\bf F. Budget Justification}
+\addcontentsline{toc}{part}{F. Budget Justification}
+\vspace{0.3in}
+\input{budget}
+
+\newpage
+\renewcommand{\thepage}{G-\arabic{page}}
+\setcounter{page}{1}
+\centerline{\Large\bf G. Facilities, Equipment, and Other Resources.}
+\addcontentsline{toc}{part}{G. Facilities, Equipment, and Other Resources.}
+\vspace{0.3in}
+\input{facilities}
+
+% \newpage
+% \bigskip
+% \renewcommand{\thepage}{I-\arabic{page}}
+% \setcounter{page}{1}
+% \centerline{\Large\bf I. Post-Doctoral Researcher Mentoring Plan}
+% \addcontentsline{toc}{part}{I. Post-Doctoral Researcher Mentoring Plan}
+% \vspace{0.3in}
+% \input{postdoc}
 
 \end{document}

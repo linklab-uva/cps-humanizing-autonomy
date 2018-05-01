@@ -11,5 +11,17 @@
 \textit{This section should describe how the research concepts proposed will be demonstrated and validated. It should present metrics for success. It should identify critical experiments, and describe how the research will be demonstrated, including through simulation, prototyping, and integration with real (including sub-scale) cyber-physical systems. For Medium and Frontier projects, the validation plan must include experimentation on an actual cyber-physical system.}
 
 \lu{Lu describes the full scale driving simulator}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.9\textwidth]{figures/testbed}
+\caption{Our partially built testbed of human-autonomous vehicle interactions. The human is monitored by a number of sensors, and interacts with the driving simulator through the PreScan software interface.)} 
+\label{fig:testbed}
+\end{figure}
+
+Figure~\ref{fig:testbed} shows the setup of an academic-scale testbed that co-PI Feng's group has partially built and will complete during the proposed effort. The hardware platform is based on the Force Dynamics 401CR driving simulator. This four-axis motion platform can pitch, roll, yaw, and heave, to simulate the experience of being in a vehicle. Thus, we expect to collect data about realistic human response during the driving. The human is interfaced to the hardware platform through PreScan, which is a software tool designed as a development environment for Advanced Driver Assistance Systems (ADAS) and Intelligent Vehicle (IV) systems. These are systems with sensors that monitor the vehicle's surroundings and that use the acquired information to take action. Such actions may range from warning the driver of a potentially dangerous situation to actively evading hazards by means of automatic braking or automatic steering. PreScan can be used for designing and evaluating ADAS and IV systems that are based on sensor technologies such as radar, laser, camera, ultrasonic, GPS and C2C/C2I communications. 
+The ``human monitoring and sensing'' block in Figure~\ref{fig:testbed} encloses the sensors that will be used for both high-level inference of human's intent and preferences and low-level monitoring of human behavioral, mental and physiological states. These sensors include EEG for neural signals, EKG for heart activity, EMG for muscle activity, a camera for head tracking, eye tracking suite and cloud-based speech recognizer.
+
+
 \nicola{Nicola describes the experiment setup for reachability analysis experimentation}
 \madhur{Madhur describes F1/10 - could be used for reachibility + control synthesis}
