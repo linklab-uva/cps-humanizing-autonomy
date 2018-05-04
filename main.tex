@@ -13,6 +13,17 @@
 \usepackage{latexsym}	
 \usepackage{xspace}
 \usepackage{alltt}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{rotating}
+\usepackage{setspace} % This must precede hyperref
+\usepackage{hyperref}
+%\usepackage[usenames]{color}
+
 
 \setlength{\textheight}{9.4in}
 \setlength{\topmargin}{-0.2 in}
@@ -22,7 +33,7 @@
 %\setlength{\parindent}{0.25 in}
 %\setlength{\parskip}{2 mm}
 \setcounter{tocdepth}{2}
-\usepackage{wrapfig}
+\usepackage{latexsym, wrapfig}
 
 % Theorem-like definitions
 \newtheorem{thm}{Theorem}
@@ -65,6 +76,11 @@
 \usepackage[inline]{enumitem}
 \usepackage{caption}
 \captionsetup{font=footnotesize}
+
+\newcommand\NB[1]{$\spadesuit$\footnote{NB: #1}}
+\newcommand\MB[1]{$\diamondsuit$\footnote{NB: #1}}
+\newcommand\AH[1]{$\clubsuit$\footnote{NB: #1}}
+\newcommand\LF[1]{$\diamondsuit$\footnote{NB: #1}}
 
 
 \usepackage{newunicodechar}
@@ -129,7 +145,7 @@
 \centerline{\Large\bf F. Budget Justification}
 \addcontentsline{toc}{part}{F. Budget Justification}
 \vspace{0.3in}
-\input{budget}
+%\input{budget}
 
 \newpage
 \renewcommand{\thepage}{G-\arabic{page}}
