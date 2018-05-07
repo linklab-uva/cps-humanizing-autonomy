@@ -53,7 +53,7 @@ where we dropped the dependency on $\theta$ for brevity.
 
 During training, $(S, I)$ is a training example pair, and we optimize the sum of the log probabilities as described in (~\ref{eq:joint}) over the whole training set using stochastic gradient descent.
 The The long short-term memory (LSTM) model for sentence generation is trained to predict each word of the sentence after it has seen the image as well as all preceding words as defined by $p(S_t|I, S_0, . . . , S_{t-1})$.
-It is instructive to think of the LSTM in unrolled form - a copy of the LSTM memory is created for the image and each sentence word such that all LSTMs share the same parameters and the output mt−1 of the LSTM at time t − 1 is fed to the LSTM at time t. 
+It is instructive to think of the LSTM in unrolled form - a copy of the LSTM memory is created for the image and each sentence word such that all LSTMs share the same parameters and the output of the LSTM at time $t-1$ is fed to the LSTM at time $t$.
 Following our exapmple, if we denote by $I$ the input image and by $S = (S_0, . . . , S_N )$ a true sentence describing this image, the unrolling procedure reads:
 \begin{align}
     x_{-1} &= \text{CNN(I)} \\
@@ -61,7 +61,7 @@ Following our exapmple, if we denote by $I$ the input image and by $S = (S_0, . 
     p_{t+1} &= \text{LSTM}(x_t)  \quad t \, \in \, \{0, \cdots, N-1 \}
 \end{align}
 Both the image and the words are mapped to the same space, the image by using a vision CNN, the words by using word embedding $W_e$.
-The image I is only input once, at $t = −1$, to inform the LSTM about the image contents. This process is also shown in Figure~\ref{fig:deep_exp}.
+The image $I$ is only input once, at $t = -1$, to inform the LSTM about the image contents. This process is also shown in Figure~\ref{fig:deep_exp}.
 
 Finally, the output of the CNN classification, is used to report the average distance of the classified object, as part of the sentence. For instance, when the CNN detects a pedestrian, it uses a bounding box around the detected pedestrian, to compute the distance of the centroid of the depth pixels, or the average of the depth pixels inside the bounding box. 
 

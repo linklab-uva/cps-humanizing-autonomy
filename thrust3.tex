@@ -1,47 +1,52 @@
 \subsection{Research Thrust 3: Feedback Design}
-\label{sec:trust}
+\label{sec:feedback}
 
-\madhur{The primary intellectual merit in this section is the Deep Explanations idea as illustrated in Figure~\ref{fig:deep_exp}. The other part can be on scenario based behavior/trust modeling- but that can be part of the experiment plan too.}
+%\madhur{The primary intellectual merit in this section is the Deep Explanations idea as illustrated in Figure~\ref{fig:deep_exp}. The other part can be on scenario based behavior/trust modeling- but that can be part of the experiment plan too.}
 
-The purpose of this research thrust is to develop and validate models to quantify trust of a driver in an autonomous vehicles.
-Trust in self-driving cars is one of the big discussion points in the public debate. 
-Drivers who have always been in complete control of their car are expected to willingly hand over control and blindly trust a technology that could kill them.
-We hypothesize that trust is influenced by three components:
-\begin{enumerate}[itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
-    \item The person who trusts,
-    \item The system this person is supposed to trust, and
-    \item The driving situation.
-\end{enumerate}
+%The purpose of this research thrust is to develop and validate models to quantify trust of a driver in an autonomous vehicles.
+The purpose of this research thrust is to develop and validate what feedback should the autonomous vehicle provide to the passengers.
 
-In addition, the first component (i.e., the person), is characterized by a certain propensity to trust, which is influenced by different factors (e.g., gender, age, opinions, character traits). This is what we want to measure in the proposed research. 
+% Trust in self-driving cars is one of the big discussion points in the public debate. 
+% Drivers who have always been in complete control of their car are expected to willingly hand over control and blindly trust a technology that could kill them.
+% We hypothesize that trust is influenced by three components:
+% \begin{enumerate}[itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
+%     \item The person who trusts,
+%     \item The system this person is supposed to trust, and
+%     \item The driving situation.
+% \end{enumerate}
+
+% In addition, the first component (i.e., the person), is characterized by a certain propensity to trust, which is influenced by different factors (e.g., gender, age, opinions, character traits). This is what we want to measure in the proposed research. 
 
 While cars have become significantly more usable — particularly with regard to reliability and safety over the past twenty years — thanks to the introduction of new technologies such as electronic fuel injection, the seat belt, crumple zones, ABS, airbags, electronic stability control and GPS satellite navigation, many of these technologies have succeeded out-of-sight of the humans behind the wheel.
-Yet when it comes to newer technologies - both on-board telematics,communication and the ADAS, we see a much less successful integration of technology, vehicle and user.
+Yet when it comes to newer technologies - like advanced driver assistance systems (ADAS) , we see a much less successful integration of technology, vehicle, and user.
 At the broadest level, many of the technologies available in modern cars do not appear to have been developed with a particular user-centred approach. 
 They exist because the technology has become available to perform a specific function.
 
 As soon as driving ``feels'' even partly autonomous, people switch off, they become disengaged from the process of driving — and fail to monitor the system. 
 A quick YouTube search, reveals many videos where people are aware the systems have limitations, but still push them further than their intended use, operating pilot assist systems on roads or situations when they shouldn't.
 
-Trust comes from two factors: predictability and explainability.
+We hypothesize, that for autonomous vehicles, trust comes from two factors: \textit{predictabilit}y, and \textit{explainability}.
 If a user expects a car to drive in a certain way in a certain situation, and the car conforms to his expectation, the user will tend to trust it more.
-On occasion, when the AV’s action surprise/confuse the user- as long as there is an explanation provided for it, the user can again gauge her level of trust int he system.
-Our goal is :
+Occasionally, when the AV’s action surprise/confuse the user- as long as there is an explanation provided for it, the user can again gauge her level of trust in the system.
+Given a proile of the passenger's behavior and emotional needs, from Section~\ref{sec:behaviour} the goal of this researh thrust is to:
 \begin{enumerate}[itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
-    \item Understand the set of trust expectations a driver has for their autonomous vehicle.
-    \item Develop a set of explanations autonomous vehicles should provide to promote trust and create an algorithm that can provide these explanations.
-    \item Perform experiments to understand how content, timing and delivery impacts the effectiveness of explanations.
+    \item Develop an automated way to provide explanations for the autonomous vehicle's actions to the passenger - this caters to the \textit{explainability} aspect of a passenger's trust, and
+    \item Develop user interfaces which convey the intended actions of the vehicle to the passenger so they can gauge the \textit{predicitability} component of their trust in the autonomous vehicle.
 \end{enumerate}
 
-\subsubsection{Scenario-based trust modeling}
-\label{subsec:trust-modeling}
-\input{scenarios}
+% \subsubsection{Scenario-based trust modeling}
+% \label{subsec:trust-modeling}
+% \input{scenarios}
 
-\madhur{Madhur describes the scenario based experiments with prescan}
+%\madhur{Madhur describes the scenario based experiments with prescan}
 % feel free to create another tex input file for this subsection 
 %\madhur{I will add some text to this subsection as well.}
 
 
-\subsubsection{Deep explanations}
+\subsubsection{Explainability via Deep-Explanations }
 \label{subsec:explainability}
 \input{deepexplain}
+
+\subsection{Predictability via UI design}
+\label{subsec:uid}
+\input{uidesign}
