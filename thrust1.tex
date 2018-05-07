@@ -1,17 +1,33 @@
 \subsection{Research Thrust 1: Behavior modeling}
 \label{sec:behaviour}
 
- The ability to (1) detect, (2) assess and (3) control a person’s emotions has been identified to be the predictor of success in relating to the people around us. By being able to read other’s “emotional cues,” not only we can better understand how they are feeling at a given time, but it also helps us to predict how they will respond in different scenarios. Research suggests that emotions are normally associated with specific events or occurrences  (cite), and they can significantly influence our thoughts and behaviors. Additionally, we can use reason to evaluate our emotions, interpret them, and reassess our initial reactions to them. Therefore, by detecting certain events and occurrences, we may be able to assess and predict individual emotional states and use reason to soften their impact or “shift” their meaning. If the vision for the future AVs is to build "human-like" trust with the passenger(s), just like humans, AVs should be able to detect, assess, and control the passenger(s) emotions in real-time. 
+ The ability to (1) detect, (2) assess and (3) control a person’s emotions has been identified to be the predictor of success in relating to the people around us. By being able to read other’s “emotional cues,” not only we can better understand how they are feeling at a given time, but it also helps us to predict how they will respond in different scenarios. Research suggests that emotions are normally associated with specific events or occurrences  (cite), and they can significantly influence our thoughts and behaviors. Additionally, we can use reason to evaluate our emotions, interpret them, and reassess our initial reactions to them. Therefore, by detecting certain events and occurrences, we may be able to assess and predict individual emotional states and use reason to soften their impact or “shift” their meaning. By designing AVs to automatically and accurately detect, assess, and control the passenger(s) driving behaviors and emotions, not only they can better account and enhance the safety and driving experience of the passenger(s), they can also move towards developing a “human-like” trust with the passenger(s). 
  
-\AH{add a transition sentence} In this project, we aim to better understand what environmental factors influence passenger(s) emotions and how these emotions influence driving behaviors. Specifically, we are interested in formally characterizing emotions through a “context-dependence” approach, where spatial and temporal information can be automatically detected, analyzed, and interpreted. Through instrumentation of a number of manual and semi-autonomous \AH{can we say autonomous cars? or should we just leave it at manual cars} vehicles, we will collect environmental data with ambient-condition sensors (i.e., thermal, indoor and outdoor noise levels, and lighting) in parallel with user-specific behavioral, emotional and physiological traits through cameras, wearables (e.g. smartwatch), pressure sensors (seat and steering wheel). Through facial recognition algorithms as well as application and social media data (e.g., Spotify, Pandora) we will monitor and identify changes in passenger emotions and behaviors. Through statistical analysis and machine learning techniques, we will identify models of behavioral and emotional traits in specific contextual and environmental settings. The specific research questions that will be addressed through this approach include: 
+ In this project, we aim to understand how environmental, physiological, and social factors may influence and/or cause certain behaviors and emotions in the driver and passengers. Specifically, we are interested in formally characterizing emotions and behaviors through a “context-dependence” approach, where spatial and temporal information can be automatically detected, analyzed, and interpreted. Through this approach, behavioral and emotional models can be generated and applied towards
+ \begin{enumerate}
+     \item determining the safety regions according to the reach-ability analysis in Thrust 2 (Section~\ref{sec:reachability}),
+     \item as input to the constraints on the control actions to select a trajectory which conforms to the users behavior needs in Thrust 2 (Section~\ref{sec:reachability})
+     \item a detection mechanism which triggers when the natural language explanation of the cars actions is generated Thrust 3 (Section~\ref{sec:feedback})
+ \end{enumerate}
+ 
+ Within the past two decades, a number of Naturalistic Driving Studies (NDS) aimed at understanding human behaviors prior to and after moments of crashes or near crashes; first generation of these studies used manual annotation techniques to identify driver behaviors in specific epochs of driving (CITE). However, due to complexities of human behaviors and  interests in long-term driver-monitoring (months to a year), manual annotation techniques are insufficient. As a result, in second generation and more recent NDS, researchers are focusing on large-scale computer vision based analysis of human behavior were information can (semi)automatically be extracted from raw video feeds.     
+ 
+ The specific research questions that will be addressed through this approach include: 
 \begin{enumerate}
-    \item What is the relationship between environmental/contextual settings and passenger(s) emotions and behaviors?
-    \item What is the taxonomy of behaviors and emotions in driving?
-    \item How behavior and emotions can non-intrusively and with least number of sensors be accurately detected?
-    \item What are environmental and social factors that can gain your attention? (research on signs)
-    \item Do people "trust" certain specific behaviors or conditions? \AH{for instance, do you trust your own behavior more than another type of driving behavior}? 
+    \item What is the impact of social interaction on driving behavior? 
+    \item What is the taxonomy of driving behaviors and emotions based on environmental conditions, social interactions, and physiological changes?
+    \item How can driving behavior and emotions be non-intrusively and with least number of sensors be detected?
+    \item What are environmental and social factors that impact passenger(s) attention (positively or negatively)? 
+    \item Do people have differentiating “trust” profiles according to specific behaviors and contextual conditions?  
 
 \end{enumerate}
+
+Through instrumentation of a number of manual and semi-automated vehicles, we will collect environmental and user-related information. As shown in Table xxxx,  with ambient-condition sensors (i.e., thermal, indoor and outdoor noise levels, and lighting levels) in parallel with user-specific behavioral, emotional and physiological traits; these user-specific information are automatically collected through the data generated from cameras, wearables (e.g. smartwatch), and pressure sensors (seat and steering wheel). 
+
+Through this approach, behavioral and emotional models can be developed and implemented into AVs for driving-control optimization and predicting
+
+
+Specifically, through facial recognition algorithms as well as social media apps such as Spotify, Pandora) we will monitor and identify changes in passenger emotions and behaviors. Through statistical analysis and machine learning techniques, we will identify models of behavioral and emotional traits in specific contextual and environmental settings. 
 
 As a first approach, we plan to observe trends in our data that both reveal (1) factors that influence specific human emotions and (2) the downstream consequences of particular emotions on their behaviors. For example, we will aim to understand what environmental (e.g., weather, thermal conditions, lighting, noise) and social factors (e.g., social interaction), physiological factors (e.g.,arm movement) trigger particular emotions. Through this approach, we will also be able to develop a database of  emotions, behaviors and environmental changes. %as there exists a limited number of emotional models and databases available to the public and the research community.
 As it may be difficult to often identify triggers to particular emotions (i.e., passenger may appear already experiencing a particular emotion), we plan to evaluate which behavioral outcomes can be used as cues for particular emotions. For example, we may learn that when participants are feeling sad, they are more likely to deviate from their normal accelerating and decelerating behaviors or more likely to listen to certain genre of music. With this information, we will then assess if we can reliably predict particular emotions, given that a passenger behaved in a particular way. 
@@ -22,7 +38,6 @@ After having a better understanding of these factors, we aim to develop psycholo
 With this information as a cue, we can understand that there might be a need to intervene or provide some feedback to the passenger at that time. 
 
 
-In this research, we will conduct real-life as well as simulation-based experimental studies to identify understand (1) the association between human emotional he causation of attributes and contextual interaction observed from each individual, (2) a taxonomy of emotional and behavioral traits as they relate to the internal and external triggers as well as personalized traits and (3) perspectives of trust in autonomous vehicles from real people, rather than working on assumptions, and (4) the intervention and communication strategies that could be automated by AV to meet passengers(s) need and enhance their "driving/journey" experience.
 
 \noindent\textbf{\em Automated Recognition of Behaviors and and Emotions:} \vskip 0.2in
 
@@ -60,6 +75,7 @@ In this research, we will conduct real-life as well as simulation-based experime
 
 
 
+%In the proposed work, we will conduct real-life as well as simulation-based experimental studies to identify understand (1) the association between human emotions and behaviors, (2) a taxonomy of emotional and behavioral traits as they relate to the internal and external triggers as well as personalized traits (3) perspectives of trust in autonomous vehicles from real people, rather than working on assumptions, and (4) the intervention and communication strategies that could be automated by AV to meet passengers(s) need and enhance their "driving/journey" experience.
 
 
 

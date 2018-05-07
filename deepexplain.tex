@@ -29,7 +29,7 @@ The main inspiration of our work comes from recent advances in machine translati
 Over the last few years it has been convincingly shown that CNNs can produce a rich representation of the input image by embedding it to a fixed-length vector, such that this representation can be used for a variety of vision tasks \cite{sermanet2013overfeat}. 
 Hence, it is natural to use a CNN as an image ``encoder'', by first pre-training it for an image classification task and using the last hidden layer as an input to the RNN decoder that generates sentences. For the RGB image captioning we will use Neural Image Captioning method, as described in~\cite{Vinyals2015ShowAT}.
 
-\subsection{Captioning from point clouds, depth maps, and segmented images}
+\subsubsection{Captioning from point clouds, depth maps, and segmented images}
 \label{subsec:point_cloud}
 
 To properly process the world, an autonomous car needs to take raw sensor information (like point cloud) and figure out what it’s seeing.
@@ -65,7 +65,7 @@ The image $I$ is only input once, at $t = -1$, to inform the LSTM about the imag
 
 Finally, the output of the CNN classification, is used to report the average distance of the classified object, as part of the sentence. For instance, when the CNN detects a pedestrian, it uses a bounding box around the detected pedestrian, to compute the distance of the centroid of the depth pixels, or the average of the depth pixels inside the bounding box. 
 
-\subsection{Explanation generation via captioning merging}
+\subsubsection{Explanation generation via captioning merging}
 \label{subsec:explain}
 
 Using the CNN and LSTM networks on each of the modalities, we obtain a caption for each modality. The thing to note is that each of the networks uses the same dictionary, and therefore, each network is likely to result in a caption which refers to the same object. 
