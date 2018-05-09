@@ -1,6 +1,6 @@
 %!TEX root = main.tex
 
-\subsection{Research Thrust 2: Reach-ability analysis based safety region estimation}
+\subsection{Research Thrust 2: Reachability analysis based safety region estimation}
 \label{sec:reachability}
 %\nicola{This is all you Nicola}
 %\lu{Lu adds subsection on control synthesis}
@@ -141,7 +141,7 @@ We propose a reinforcement learning-based approach to compute the desired contro
 %Once safety is assessed online, we would like to 
 %\NB{still working on this section...I'm going to use some of this material but the key idea is to be able to adapt your actions or the AV actions based on how safe the system believes to be} 
 Reinforcement Learning (RL) is an area of machine learning concerned with learning how an agent should behave in a given environment in order to maximize some form of cumulative reward. To this end, an agent cycles through a series of transitions which consist of going from one state to the next state by applying actions to the environment and receiving rewards as a consequence of his actions. The goal of RL is to derive a policy, which, given a state, provides the action to take in order to maximize the cumulative reward.
-A central problem of RL is thus that of properly assigning the reward to the actions that lead to such reward (a notion known as credit-assignment \cite{kaelbling1996reinforcement, sutton1998reinforcement}). In our case the reward is a combination between user preference and safety, where safety is determined using the reachability set analysis as explained in Section~\ref{subsec:online_reach}
+A central problem of RL is thus that of properly assigning the reward to the actions that lead to such reward (a notion known as credit-assignment \cite{kaelbling1996reinforcement, sutton1998reinforcement}). In our case the reward is a combination between user preference and safety, where safety is determined using the reachability set analysis as explained in Section~\ref{subsec:online_reach}.
 %% This paragraph below reads like a tutorial on reinforcement learning but does not describe how RL is being used for path planning.
 %Another main issue of learning behavioral policies in domains that are unknown at first (especially in autonomous vehicles) is that of efficiently bringing the agent from a tabula-rasa state to a condition where the agent is acting as close to optimality as possible. This notion is also known as regret minimization \cite{kaelbling1996reinforcement, sutton1998reinforcement} and is closely related to the topic of trading off exploration of the environment (to sample previously unseen parts of the state-action space) with exploitation of the knowledge accumulated so far. 
 %An agent that enters the world would therefore need to explore the environment by applying actions and gather data which are as informative as possible so that a policy, encoding the knowledge accumulated so far, is derived. The goal is to go from a situation where the system is mostly exploring the environment to a situation where it is mostly exploiting the accumulated knowledge. 
