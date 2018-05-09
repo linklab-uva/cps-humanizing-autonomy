@@ -2,20 +2,19 @@
 \label{sec:behaviour}
 
  %The ability to (1) detect, (2) assess and (3) manage a person’s emotions has been identified to be the predictor of success in relating to the people around us. 
- Being able to read other’s emotional cues not only allows us to understand how people are feeling at a given time, but it also helps us to predict how they will respond in different scenarios. 
+ %Being able to read other’s emotional cues not only allows us to understand how people are feeling at a given time, but it also helps us to predict how they will respond in different scenarios. 
  If an autonomous vehicle can detect the emotional cues of the driver, and more importantly respond to them, then it can develop ``human-like'' trust with the driver.
  Research suggests that emotions are normally associated with specific events or occurrences \cite{cowie2001emotion}, and they can significantly influence our thoughts and behaviors. 
  %Additionally, we can use reason to evaluate our emotions, interpret them, and reassess our initial reactions to them. 
  %Therefore, by detecting certain events and occurrences, we may be able to assess and predict individual emotional states and use reason to soften their impact or ``shift'' their meaning. 
- This research thrust aims to enhance driver experience, safety, and trust in the AV. 
- We do so by automatically and accurately detecting, assessing, and managing the passengers behaviors and emotions. 
+ This research thrust aims to enhance driver experience, safety, and trust in the AV by automatically and accurately detecting, assessing, and managing the passengers behaviors and emotions. 
  
 Several Naturalistic Driving Studies (NDS) have studied human behavior in vehicles in different safety-related conditions, with the specific emphasis towards crash or near-crash incidents. 
 In these studies, cars were equipped with sensors and devices that continuously monitor various aspects of driving behavior such as vehicle acceleration, deceleration, location, and speed, driver-related information such as eye, head and hand movement, and environmental conditions such as traffic and weather conditions \cite{eenink2014udrive, simons2015naturalistic, fridman2017autonomous, klauer2006impact, victor2015analysis, papazikou2017detecting}. 
-For instance, in \cite{eenink2014udrive} researchers identified that certain driver-personality traits are prone to committing speeding violations; 
-or bad behaviors may cluster together, where drivers who perform one type of risky behavior are more likely to engage in other types of risky behaviors. \begin{figure}
+%For instance, in \cite{eenink2014udrive} researchers identified that certain driver-personality traits are prone to committing speeding violations; or bad behaviors may cluster together, where drivers who perform one type of risky behavior are more likely to engage in other types of risky behaviors. 
+\begin{figure}
     \centering
-    \includegraphics[width=0.8\columnwidth]{figures/car.pdf}
+    \includegraphics[width=0.7\columnwidth]{figures/car.pdf}
     \caption{Overview of instrumentation of vehicles and the collected information from participants}
     \label{fig:sensors}
 \end{figure}
@@ -38,10 +37,11 @@ When we break down this hypothesis further, the following are the questions of i
     \item How can driving behavior and emotions be non-intrusively and with least number of sensors be detected?
     \item Do people have differentiating “trust” profiles according to specific behaviors and contextual conditions?  
 \end{enumerate}
-
-While existing literature has considered each of the environmental, social, and physiological factors separately, the challenge lies in learning causal relationships between these factos, and how they influence emotion and behaviors of the drivers.  
+While existing literature has considered each of the environmental, social, and physiological factors separately, the challenge lies in learning causal relationships between these factors, and how they influence emotion and behaviors of the drivers.  
 Specifically, we will gather data and build models for (1) factors that influence specific human emotions and (2) the downstream consequences of particular emotions on their behaviors. 
-For instance, we will gather data to asses what environmental (e.g., weather, thermal conditions, lighting, noise) and social factors (e.g., social interaction), physiological factors (e.g.,arm movement) trigger particular emotions. 
+For instance, we will gather data to asses what environmental (e.g., weather, thermal conditions, lighting, noise) and social factors (e.g., social interaction), physiological factors (e.g.,arm movement) trigger particular emotions.
+
+\subsection{Taxonomy of driving behaviors}
 One outcome of this work will also be able to develop a library of emotions, behaviors, social interactions, and environmental changes. 
 Our preliminary investigations have revealed the following taxonomy for driver behaviors:
 

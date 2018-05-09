@@ -14,7 +14,7 @@ The task of automatic image description involves taking an image, analyzing its 
 Despite the difficult nature of this task, there has been a recent surge of research interest in attacking the image caption generation problem. In particular, deep neural networks have been shown to form new grammatically correct sentences as opposed to the template based models and their limited generalization capability to a novel image.
 %To capture the correlation between two modalities i.e. visual and natural language we need to map both these to some same space so at learn the relation between them or say we need to learn the multimodal joint model.
 %Models that uses different deep neural networks like convolutional neural network (CNN), long short term memory(LSTM) networks, recurrent neural network(RNN) to implicitly learn the common embedding. These by far gives the best result on all common datasets of caption generation
-Aided by advances in training deep neural networks and the availability of large classification datasets, recent work has significantly improved the quality of caption generation using a combination of convolutional neural networks (convnets) to obtain vector representation of images and recurrent neural networks to decode those representations into natural language sentences.
+%Aided by advances in training deep neural networks and the availability of large classification datasets, recent work has significantly improved the quality of caption generation using a combination of convolutional neural networks (convnets) to obtain vector representation of images and recurrent neural networks to decode those representations into natural language sentences.
 
 In the proposed research we extend current image caption generators to work with multi-modal data-sets.
 \begin{enumerate}[itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
@@ -24,9 +24,9 @@ In the proposed research we extend current image caption generators to work with
 \end{enumerate}
 Consider the scene shown in the Figure~\ref{fig:deep_exp}; in this situation multiple modalities of the scene are available - namely, an RGB image from a center mounted camera, a depth map (or it could be a point cloud) using a depth sensor or a LIDAR, a segmented image (usually obtained by running a deep convolutional neural network on the RGB image), and the action state of the vehicle - steering, acceleration, braking, etc. 
 We first train a single joint model that takes an image I as input, and is trained to maximize the likelihood $p(S|I)$ of producing a target sequence of words $S = {S1, S2, . . .}$ where each word $S_t$ comes from a given dictionary, that describes the image adequately.
-The inspiration for our work comes from recent advances in machine translation, where the task is to transform a sentence S written in a source language, into its translation T in the target language, by maximizing $p(T|S)$. 
-For many years, machine translation was also achieved by a series of separate tasks (translating words individually, aligning words, reordering, etc), but recent work has shown that translation can be done in a much simpler way using Recurrent Neural Networks (RNNs)~\cite{cho2014learning, bahdanau2014neural, sutskever2014sequence} and still reach state-of-the-art performance. 
-An ``encoder'' RNN \textit{reads} the source sentence and transforms it into a rich fixed-length vector representation, which in turn in used as the initial hidden state of a ``decoder'' RNN that \textit{generates} the target sentence. By replacing the encoder RNN with a CNN has been shown to work well when the inputs are images~\cite{sermanet2013overfeat}. 
+This is similar to recent advances in machine translation, where the task is to transform a sentence S written in a source language, into its translation T in the target language, by maximizing $p(T|S)$. 
+% For many years, machine translation was also achieved by a series of separate tasks (translating words individually, aligning words, reordering, etc), but recent work has shown that translation can be done in a much simpler way using Recurrent Neural Networks (RNNs)~ and still reach state-of-the-art performance. 
+An ``encoder'' RNN~\cite{cho2014learning, bahdanau2014neural, sutskever2014sequence} \textit{reads} the source sentence and transforms it into a rich fixed-length vector representation, which in turn in used as the initial hidden state of a ``decoder'' RNN that \textit{generates} the target sentence. By replacing the encoder RNN with a CNN has been shown to work well when the inputs are images~\cite{sermanet2013overfeat}. 
 %Over the last few years it has been convincingly shown that CNNs can produce a rich representation of the input image by embedding it to a fixed-length vector, such that this representation can be used for a variety of vision tasks \cite{sermanet2013overfeat}. 
 %Hence, it is natural to use a CNN as an image ``encoder'', by first pre-training it for an image classification task and using the last hidden layer as an input to the RNN decoder that generates sentences. 
 For the RGB image captioning we will use Neural Image Captioning method, as described in~\cite{Vinyals2015ShowAT}.
@@ -66,7 +66,7 @@ Finally, the output of the CNN classification, is used to report the average dis
 \label{subsec:explain}
 
 Using the CNN and LSTM networks on each of the input modalities, we obtain a caption for each.
-The thing to note is that each of the networks uses the same dictionary, and therefore, each network is likely to result in a caption which refers to the same object. 
+Since each of the networks uses the same dictionary, therefore, they are likely to result in a caption which refers to the same object. 
 Going back to the example in Figure~\ref{fig:deep_exp}, each of the captions refers to a pedestrian. 
 We use this commonality to merge the captions into a single explanation. 
 We will also explore architectures where the output of one caption generation can influence the input of the other networks. 
@@ -75,11 +75,19 @@ Sequence-to-sequence (seq2seq) models have enjoyed great success in a variety of
 %Specifically, we use a technique similar to Neural Machine Translation (NMT), widely used in language translation, but much simpler. 
 %Traditional phrase-based translation systems performed their task by breaking up source sentences into multiple chunks and then translated them phrase-by-phrase. This led to disfluency in the translation outputs and was not quite like how we, humans, translate. 
 %We read the entire source sentence, understand its meaning, and then produce a translation. Neural Machine Translation mimics that.
-Specifically, an NMT system first reads the source sentence using an encoder to build a vector, a sequence of numbers that represents the sentence meaning; a decoder, then, processes the sentence vector to emit a translation.
+\begin{wrapfigure}{r}{0.4\textwidth}
+  \begin{center}
+    \includegraphics[width=0.39\textwidth]{figures/trajectory_ui.pdf}
+  \end{center}
+  \caption{Inspired from gaming, projecting the intended trajectory of the car in a color coded manner can relay critical feedback to the user about what actions the car intends to take in any given situation.}
+  \label{fig:trajectory}
+\end{wrapfigure}
+Specifically, we use a technique similar to Neural Machine Translation (NMT) in which the system first reads the source sentence using an encoder to build a vector, a sequence of numbers that represents the sentence meaning; a decoder, then, processes the sentence vector to emit a translation.
 This is often referred to as the encoder-decoder architecture. 
-In this manner, NMT addresses the local translation problem in the traditional phrase-based approach: it can capture long-range dependencies in languages, e.g., gender agreements; syntax structures; etc., and produce much more fluent translations.
+%In this manner, NMT addresses the local translation problem in the traditional phrase-based approach: it can capture long-range dependencies in languages, e.g., gender agreements; syntax structures; etc., and produce much more fluent translations.
 For sentence merging, we use the encoder part of the NMT to translate each caption into the same vector space. 
-We then search for common word embedding (say corresponding to a pedestrian, or a road, or a sign). The problem becomes that of searching for common vectors. We simply, merge or combine the sequences corresponding to the common vectors and then use the combines sequence as the input to the decoder part of the NMT (which is simply the inverse of the encoder as we are not performing any translation). To summarize, we take all the captions from each modality, map it to a common vector space, look for common words in the vector space, which are present in the dictionary, and decode back into a sentence. 
+We then search for common word embedding (say corresponding to a pedestrian, or a road, or a sign). The problem becomes that of searching for common vectors. We simply, merge or combine the sequences corresponding to the common vectors and then use the combines sequence as the input to the decoder part of the NMT (which is simply the inverse of the encoder as we are not performing any translation). 
+%To summarize, we take all the captions from each modality, map it to a common vector space, look for common words in the vector space, which are present in the dictionary, and decode back into a sentence. 
 The resulting sentences are human readable.
 By combining them with the actions being taken by the car, they can serve as meaningful explanations, providing insights into what the autonomous vehicle ``sees'' and what action it takes. 
 PI Behl has previously conducted research on interpretable machine learning and control synthesis algorithms for building automation~\cite{behl2016interactive,jain2017data}
