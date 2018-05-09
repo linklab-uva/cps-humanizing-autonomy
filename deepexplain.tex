@@ -17,11 +17,12 @@ Despite the difficult nature of this task, there has been a recent surge of rese
 %Aided by advances in training deep neural networks and the availability of large classification datasets, recent work has significantly improved the quality of caption generation using a combination of convolutional neural networks (convnets) to obtain vector representation of images and recurrent neural networks to decode those representations into natural language sentences.
 
 In the proposed research we extend current image caption generators to work with multi-modal data-sets.
-\begin{enumerate}[itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
+% [itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
+\begin{enumerate*}
     \item Instead of generating captions from RGB images alone, we will also generate captions from LIDAR data, depth sensor images, and segmented images. 
     \item The captions are then combined with information about the control decision (steering, acceleration, and braking) made, to create an explanation (description) of the scene for the user. 
     \item We test this approach in simulation, using the photo-realistic Airsim~\cite{shah2018airsim} simulation. 
-\end{enumerate}
+\end{enumerate*}
 Consider the scene shown in the Figure~\ref{fig:deep_exp}; in this situation multiple modalities of the scene are available - namely, an RGB image from a center mounted camera, a depth map (or it could be a point cloud) using a depth sensor or a LIDAR, a segmented image (usually obtained by running a deep convolutional neural network on the RGB image), and the action state of the vehicle - steering, acceleration, braking, etc. 
 We first train a single joint model that takes an image I as input, and is trained to maximize the likelihood $p(S|I)$ of producing a target sequence of words $S = {S1, S2, . . .}$ where each word $S_t$ comes from a given dictionary, that describes the image adequately.
 This is similar to recent advances in machine translation, where the task is to transform a sentence S written in a source language, into its translation T in the target language, by maximizing $p(T|S)$. 
@@ -72,16 +73,11 @@ We use this commonality to merge the captions into a single explanation.
 We will also explore architectures where the output of one caption generation can influence the input of the other networks. 
 To merge the captions together we rely on an idea similar to sequence-to-sequence matching~\cite{sutskever2014sequence}.
 Sequence-to-sequence (seq2seq) models have enjoyed great success in a variety of tasks such as machine translation, speech recognition, and text summarization.
+
 %Specifically, we use a technique similar to Neural Machine Translation (NMT), widely used in language translation, but much simpler. 
 %Traditional phrase-based translation systems performed their task by breaking up source sentences into multiple chunks and then translated them phrase-by-phrase. This led to disfluency in the translation outputs and was not quite like how we, humans, translate. 
 %We read the entire source sentence, understand its meaning, and then produce a translation. Neural Machine Translation mimics that.
-\begin{wrapfigure}{r}{0.4\textwidth}
-  \begin{center}
-    \includegraphics[width=0.39\textwidth]{figures/trajectory_ui.pdf}
-  \end{center}
-  \caption{Inspired from gaming, projecting the intended trajectory of the car in a color coded manner can relay critical feedback to the user about what actions the car intends to take in any given situation.}
-  \label{fig:trajectory}
-\end{wrapfigure}
+
 Specifically, we use a technique similar to Neural Machine Translation (NMT) in which the system first reads the source sentence using an encoder to build a vector, a sequence of numbers that represents the sentence meaning; a decoder, then, processes the sentence vector to emit a translation.
 This is often referred to as the encoder-decoder architecture. 
 %In this manner, NMT addresses the local translation problem in the traditional phrase-based approach: it can capture long-range dependencies in languages, e.g., gender agreements; syntax structures; etc., and produce much more fluent translations.

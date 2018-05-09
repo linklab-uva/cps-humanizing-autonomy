@@ -3,8 +3,8 @@
 
 %\madhur{The primary intellectual merit in this section is the Deep Explanations idea as illustrated in Figure~\ref{fig:deep_exp}. The other part can be on scenario based behavior/trust modeling- but that can be part of the experiment plan too.}
 %The purpose of this research thrust is to develop and validate models to quantify trust of a driver in an autonomous vehicles.
-The purpose of this research thrust is to develop and validate what feedback should the autonomous vehicle provide to the passengers.
-If we detect the passengers are in distress, or confused about the car's driving behavior and actions, then providing appropriate feedback and meet their emotional and behavioral needs. 
+The purpose of this research thrust is to develop, and validate the feedback that an AV should provide to the passengers.
+%If we detect the passengers are in distress, or confused about the car's driving behavior and actions, then providing appropriate feedback and meet their emotional and behavioral needs. 
 % Trust in self-driving cars is one of the big discussion points in the public debate. 
 % Drivers who have always been in complete control of their car are expected to willingly hand over control and blindly trust a technology that could kill them.
 % We hypothesize that trust is influenced by three components:
@@ -23,10 +23,10 @@ We hypothesize, that for autonomous vehicles trust comes from two factors: \text
 If a user expects a car to drive in a certain way in a certain situation, and the car conforms to his expectation, the user will tend to trust it more.
 Occasionally, when the AV’s action surprise/confuse the user- as long as there is an explanation provided for it, the user can again gauge her level of trust in the system.
 Given a proile of the passenger's behavior and emotional needs, from Section~\ref{sec:behaviour} the goal of this research thrust is to:
-\begin{enumerate}[itemsep=0pt,parsep=0pt,topsep=4pt,leftmargin=0.4in]
+\begin{enumerate*}
     \item Develop an automated way to provide explanations for the autonomous vehicle's actions to the passenger - this caters to the \textit{explainability} aspect of a passenger's trust, and
     \item Develop user interfaces which convey the intended actions of the vehicle to the passenger so they can gauge the \textit{predictability} component of their trust in the autonomous vehicle.
-\end{enumerate}
+\end{enumerate*}
 
 
 
@@ -43,7 +43,8 @@ Given a proile of the passenger's behavior and emotional needs, from Section~\re
 \label{subsec:uid}
 \input{uidesign}
 
-We envision that these deep explanations can offer insight into the neural networks responsible for the perception and scene understanding for self-driving cars. Such black box networks soon may also play a role in planning and control for the autonomous cars~\cite{bojarski2016end}, making it even more important to obtain explanations for their actions/predictions.
+Deep explanations can offer insights into the neural networks responsible for the perception and scene understanding for self-driving cars. 
+%Such black box networks soon may also play a role in planning and control for the autonomous cars~\cite{bojarski2016end}, making it even more important to obtain explanations for their actions/predictions.
 By providing readable explanations of the actions along with and correctly designed user interfaces, we provide context and feedback to the passenger, enabling an increase in the trust between the passenger and the vehicle.
-The trajectories and safety regions computed in Thrust 2, will be incorporated as a part of the feedback design. 
-Likewise, the explanations will be generated for instances when the emotion detection from Thrust 1 predicts the driver is confused due the the behavior of the car. 
+The trajectories and safety regions computed in Thrust 2, will be incorporated as a part of the interface design. 
+The explanations will be generated for instances when the emotion detection from Thrust 1 predicts the driver is confused about the behavior of the car. 
