@@ -4,15 +4,15 @@
  %The ability to (1) detect, (2) assess and (3) manage a person’s emotions has been identified to be the predictor of success in relating to the people around us. 
  Being able to read other’s emotional cues not only allows us to understand how people are feeling at a given time, but it also helps us to predict how they will respond in different scenarios. 
  If an autonomous vehicle can detect the emotional cues of the driver, and more importantly respond to them, then it can develop ``human-like'' trust with the driver.
- Research suggests that emotions are normally associated with specific events or occurrences (cite), and they can significantly influence our thoughts and behaviors. 
+ Research suggests that emotions are normally associated with specific events or occurrences \cite{cowie2001emotion}, and they can significantly influence our thoughts and behaviors. 
  %Additionally, we can use reason to evaluate our emotions, interpret them, and reassess our initial reactions to them. 
  %Therefore, by detecting certain events and occurrences, we may be able to assess and predict individual emotional states and use reason to soften their impact or ``shift'' their meaning. 
  This research thrust aims to enhance driver experience, safety, and trust in the AV. 
  We do so by automatically and accurately detecting, assessing, and managing the passengers behaviors and emotions. 
  
 Several Naturalistic Driving Studies (NDS) have studied human behavior in vehicles in different safety-related conditions, with the specific emphasis towards crash or near-crash incidents. 
-In these studies, cars were equipped with sensors and devices that continuously monitor various aspects of driving behavior such as vehicle acceleration, deceleration, location, and speed, driver-related information such as eye, head and hand movement, and environmental conditions such as traffic and weather conditions (CITE). 
-For instance, in (CITE - European paper) researchers identified that certain driver-personality traits are prone to committing speeding violations; 
+In these studies, cars were equipped with sensors and devices that continuously monitor various aspects of driving behavior such as vehicle acceleration, deceleration, location, and speed, driver-related information such as eye, head and hand movement, and environmental conditions such as traffic and weather conditions \cite{eenink2014udrive, simons2015naturalistic, fridman2017autonomous, klauer2006impact, victor2015analysis, papazikou2017detecting}. 
+For instance, in \cite{eenink2014udrive} researchers identified that certain driver-personality traits are prone to committing speeding violations; 
 or bad behaviors may cluster together, where drivers who perform one type of risky behavior are more likely to engage in other types of risky behaviors. \begin{figure}
     \centering
     \includegraphics[width=0.8\columnwidth]{figures/car.pdf}
@@ -23,10 +23,10 @@ Although these studies provide significant insights on the driver behavior in di
 %additionally, the first generation of NDS used manual video annotation techniques to identify driver behaviors in specific epochs of driving (CITE), which requires extensive time and manpower to complete. 
 Due to complexities related to human behaviors (i.e., dynamic changes in human behaviors) many of the NDS were limited to short-term monitoring and as a result, lacked in identifying how the driver behaviors may change based on various contextual, environmental, and social settings. 
 %With the growing interest in long-term behavioral monitoring and automated monitoring approaches, in more recent NDS studies, researchers are focusing on large-scale computer vision-based and audio processing analyses of human behavior where information can  semi-automatically and/or automatically be extracted from raw video and audio feeds (CITE). 
-In a recent study researchers are using computer vision and voice-processing techniques to monitor drivers body posture, eye movement, and emotions to predict driver's frustration and gaze region that may result in unsafe behaviors while driving semi-automated and fully-automated vehicles (CITE behavioral impact of drivers roles and other MIT work). 
+In a recent study researchers are using computer vision and voice-processing techniques to monitor drivers body posture, eye movement, and emotions to predict driver's frustration and gaze region that may result in unsafe behaviors while driving semi-automated and fully-automated vehicles \cite{fridman2017autonomous, abdic2016driver, fridman2016driver, fridman2018cognitive, fridman2016owl}. 
   
 At higher levels of autonomy, behavioral and emotional information not only are extremely useful for increasing safety of AVs, they can also be applied towards optimizing control actions of AVs, and most importantly, enhancing the  driving-experience for the driver and/or passenger(s); for instance, by identifying that the driver is feeling ``happy'', AVs can optimize their route selection in order to increase the drivers positive emotions, potentially enhancing the driver's mental health. 
-Additionally, by optimizing the decision making of automated systems around the user's specific preferential and comfort profiles, research suggests that the automated system can better gain user trust (cite). 
+Additionally, by optimizing the decision making of automated systems around the user's specific preferential and comfort profiles, research suggests that the automated system can better gain user trust \cite{mouloua2018automation, noah2017first}. 
 %Although the more recent NDS are implementing automated monitoring techniques for detecting driver behaviors and emotions, they specifically focus on identifying safety-related behaviors in semi and fully-automated vehicles. 
 There exists a lack of understanding on the causation of behaviors as a result of environmental, emotional, physiological, and social factors. %(\textit{problem 1}); and integration of behavioral models into AV safety and control actions(\textit{ problem 2}). 
 %Additionally, within the exiting work, limited number of studies have investigated the impacts of social interactions on the driver and passengers behaviors and emotions; by being able to identify the impacts of social interactions on certain behaviors, AVs can better optimize the vehicle's level of autonomy according to the behavioral and emotional states of the driver as well. 
@@ -56,13 +56,13 @@ Our preliminary investigations have revealed the following taxonomy for driver b
 To fulfill this type of drivers' motivation with any type of autonomous vehicles, we can provide more effective and robust monitoring interfaces rather than providing a number of distracting tasks. Such drivers likely want to have higher situation awareness and will be satisfied with the more completed monitoring mechanisms.
 
 We plan to gather the required data both through high fidelity simulations on a full scale diving simulator (Section~\ref{sec:experiment}) and by instrumenting participant-owned vehicles, we will collect and analyze the impact of different factors on driver/passenger behaviors and emotions.
-To collect environmental-related information, Automatic Pro (CITE) will be used to monitor the car's speed and location. 
+To collect environmental-related information, Automatic Pro will be used to monitor the car's speed and location. 
 Automatic Pro will be also used to collect behavioral information such as driver's acceleration and deceleration rates
 %(previous research suggests acceleration/deceleration can be used to identify risky or frustrated drivers (CITE)). 
 Cameras will be used to capture outdoor conditions such as traffic, weather, pedestrians, signs etc. as well as indoor conditions such as social interactions, drivers and passenger(s)'s body posture, face, head and hand/arm movement. 
 Ambient-condition sensors will be used to measure thermal settings, indoor and outdoor noise levels, and lighting levels. 
 Audio recorders will be used to capture social interactions as well as any other audio sources (i.e., music, radio, audio books, etc.). 
-Wearables such as Samsung Gear or Fitbit will be used to measure the driver and passengers physiological data (i.e., heart rate and hand/arm movement). Through face recognition software (i.e., OpenSmile, iMotion, and Google API) recorded videos will be processed to create a time-stamped emotional states for the driver and passengers; 
+Wearables such as Samsung Gear or Fitbit will be used to measure the driver and passengers physiological data (i.e., heart rate and hand/arm movement). Through face recognition software (i.e., iMotion, Google API) recorded videos will be processed to create a time-stamped emotional states for the driver and passengers; 
 %additionally, audio data will be processed through speech-to-tech and natural language processing techniques to identify and classify various social interactions and audio sources (e.g., music or radio). 
 The audio information as well as physiological information can also be used to identify the driver/passengers emotional states. 
 Figure~\ref{fig:sensors} provides an overview of the sensors and data that will be collected from the drivers and passenger(s).   

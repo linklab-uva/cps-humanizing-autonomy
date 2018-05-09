@@ -127,14 +127,15 @@ In this approach, our aim is to generate guarantees based on a probabilistic tem
 To enable online efficient prediction, hence minimizing computation time and allow real-time monitoring applications, we propose to cast the prediction problem as a two-point boundary value problem (2PBVP) \cite{allen2014machine} and use support vector machine learning algorithms to approximate the reachability boundary using a nonlinear classifier, separating training queries into reachable and non-reachable sets. The idea is to generate training data by solving a large number of 2PBVPs as presented in \cite{allen2014machine} for various randomly generated query pairs. The classifier is then used online to estimate if new query points are reachable. The advantage of such approach is that it can be applied to any system with minimal computation time at runtime since training can be executed offline a priori. 
 %\NB{add more discussion here}
 
-\subsection{Behaviour-guided safe trajectory synthesis} 
+\subsection{Behavior-guided safe trajectory synthesis} 
 The safety assessment introduced above is used to guide the AV actions to maintain safety, i.e., to maintain the AV within safe reachable sets. 
 The next step is to select appropriate steering and control actions for the autonomous system and maintain safety at all the time. 
 The innovation here is that we consider a behavior-guided approach in which the preferences from the user profiles in Section~\ref{sec:behaviour} are taken into consideration while determining the proper actions of the AV without violating safety constraints. 
 We propose a reinforcement learning based method for determining the control actions of the autonomous vehicle while taking the user profiles into consideration. 
 
-\subsubsection{ Safe Reinforcement Learning-based Adaptation:} 
-\label{subsec:reinforce}
+% \subsubsection{ Safe Reinforcement Learning-based Adaptation:} 
+% \label{subsec:reinforce}
+
 %For example, let us consider the case in which an autonomous vehicle is passing a large semi truck on a highway with a wall divisor between opposite lanes. While passing such large vehicles, an AV will still try to maintain the lane center which can make some drivers uncomfortable because the two vehicles may be very close. Also the AV's velocity will be set without considering passing the semi truck as quick as possible making the driver even more uncomfortable if the AV stays side by side with the semi truck for too long. Hence the user preference should be taken into account to guide the decision process on what control action to perform in order to guarantee both safety and the desired performance of the vehicle. 
 We propose a reinforcement learning-based approach to compute the desired control policy.
 %\NB{let's find a proper example here like a user that likes to drive always in the center lane of a highway and is in a rush so it's pushing but there is traffic.}
