@@ -50,7 +50,7 @@ Where $\theta$ are the parameters of the model, $I$ is the depth image, and $S$ 
      \label{eq:joint}
 \end{align}
 where we dropped the dependency on $\theta$ for brevity.
-During training, $(S, I)$ is a training example pair, and we optimize the sum of the log probabilities as described in (~\ref{eq:joint}) over the whole training set using stochastic gradient descent.
+During training, $(S, I)$ is a training example pair, and we optimize the sum of the log probabilities as described in Equation(\ref{eq:joint}) over the whole training set using stochastic gradient descent.
 The long short-term memory (LSTM) model for sentence generation is trained to predict each word of the sentence after it has seen the image as well as all preceding words as defined by $p(S_t|I, S_0, . . . , S_{t-1})$.
 %It is instructive to think of the LSTM in unrolled form - a copy of the LSTM memory is created for the image and each sentence word such that all LSTMs share the same parameters and the output of the LSTM at time $t-1$ is fed to the LSTM at time $t$.
 %Following our exapmple, if we denote by $I$ the input image and by $S = (S_0, . . . , S_N )$ a true sentence describing this image, the unrolling procedure reads:
